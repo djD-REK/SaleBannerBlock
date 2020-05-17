@@ -8,7 +8,14 @@ const Block = (props) => {
     // do something that you don't want to happen while someone is editing their theme in Site Designer
   }
   const classes = StyleSheet.create(getStyles(props))
-  return <h1 className={css(classes.example)}>{props.text}</h1>
+  return (
+    <div className={css(classes.banner)}>
+      {props.text}
+      <div style={{ color: props.borderColor }}>
+        The sales banner will be displayed from...
+      </div>
+    </div>
+  )
 }
 
 Block.defaultProps = defaultConfig
