@@ -1,7 +1,7 @@
 const tenantId = "$YOUR_TENANT_ID"
 
 const localEnvPropOverrides = {
-  text: "Custom prop value for local testing",
+  //text: "Custom prop value for local testing",
 }
 
 const dataUtils = {

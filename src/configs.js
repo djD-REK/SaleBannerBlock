@@ -4,105 +4,68 @@ export const configSchema = {
   section1: {
     type: ElementPropTypes.sectionHeader,
   },
-  backgroundColorCenter: {
-    label: "Background Color (Center)",
-    type: ElementPropTypes.color,
-  },
-  backgroundColorOutside: {
-    label: "Background Color (Outside)",
-    type: ElementPropTypes.color,
+  backgroundImage: {
+    label: "Background Image With Default",
+    type: ElementPropTypes.image,
   },
   section2: {
     type: ElementPropTypes.sectionHeader,
   },
-  borderColor: {
-    label: "Border Color",
+  backgroundColor: {
+    label: "Background Color (Modal Box)",
     type: ElementPropTypes.color,
   },
-  borderRadius: {
-    label: "Border Radius",
+  backgroundOpacitySlider: {
+    label: "Background Opacity",
+    type: ElementPropTypes.slider,
+  },
+  borderRadiusSlider: {
+    label: "Border Radius (Modal Box)",
     type: ElementPropTypes.slider,
   },
   section3: {
     type: ElementPropTypes.sectionHeader,
   },
-  dateRange: {
-    label: "Sale Dates (Start and End Dates)",
-    type: ElementPropTypes.dateRange,
-  },
-  startTime: {
-    label: "Start Time (on Start Date)",
-    type: ElementPropTypes.slider,
-  },
-  endTime: {
-    label: "End Time (on End Date)",
-    type: ElementPropTypes.slider,
-  },
-  timeZone: {
-    label: "Time Zone (for Start and End Times)",
-    type: ElementPropTypes.slider,
-  },
-  section4: {
-    type: ElementPropTypes.sectionHeader,
-  },
   text: {
     label: "Text Content",
-    type: ElementPropTypes.editorFull,
+    type: ElementPropTypes.string,
   },
 }
 
-// Set up default configuration for dateRange picker (Sales Dates)
-const today = new Date() // start date
-const nextWeek = new Date() // end date
-nextWeek.setDate(nextWeek.getDate() + 7)
 export const defaultConfig = {
-  section1: "Background Gradient",
-  backgroundColorCenter: "rgba(238,174,202,1)",
-  backgroundColorOutside: "rgba(148,187,233,1)",
-  section2: "Border Styles",
-  borderColor: "rgba(238,174,202,1)",
-  borderRadius: {
+  section1: "Background Image",
+  backgroundImage: {
+    uriBase: "http://d21ivvgspl06jm.cloudfront.net/",
+    imagePath: "element-block-assets/slideshow/slide2.jpg",
+    altText: "Monument Valley",
+    width: 1600,
+    height: 500,
+  },
+  section2: "Modal Box",
+  backgroundColor: "black",
+  backgroundOpacitySlider: {
+    labelPrefix: "",
+    labelStepSize: 5,
+    labelSuffix: "%",
+    min: 0,
+    max: 100,
+    stepSize: 10,
+    selectedValue: 40,
+    vertical: false,
+  },
+  borderRadiusSlider: {
     labelPrefix: "",
     labelStepSize: 1,
     labelSuffix: "px",
     min: 0,
-    max: 20,
-    stepSize: 1,
-    selectedValue: 3,
+    max: 50,
+    stepSize: 5,
+    selectedValue: 10,
     vertical: false,
   },
-  section3: "Sale Dates",
-  dateRange: [today, nextWeek],
-  startTime: {
-    labelPrefix: "",
-    labelStepSize: 1,
-    labelSuffix: ":00",
-    min: 0,
-    max: 23,
-    stepSize: 8,
-    selectedValue: 12,
-    vertical: false,
-  },
-  endTime: {
-    labelPrefix: "",
-    labelStepSize: 1,
-    labelSuffix: ":00",
-    min: 0,
-    max: 23,
-    stepSize: 8,
-    selectedValue: 12,
-    vertical: false,
-  },
-  timeZone: {
-    labelPrefix: "",
-    labelStepSize: 10,
-    labelSuffix: ":00UTC",
-    min: -12,
-    max: 12,
-    stepSize: 1,
-    selectedValue: -5,
-    vertical: false,
-  },
-  section4: "Banner Text",
-  text: `<h1>Limited Time Only</h1><h2 color="red">50% Sale Items</h2>`,
+  section3: "Sale Banner Text",
+  lineOneText: `NOW OFFERING THE BEST DISCOUNTS OF THE YEAR`,
+  lineTwoText: "50% OFF SALE ITEMS",
+  buttonText: "Get The Best Deals",
+  textColor: "white",
 }
