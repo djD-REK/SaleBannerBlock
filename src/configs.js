@@ -4,53 +4,90 @@ export const configSchema = {
   section1: {
     type: ElementPropTypes.sectionHeader,
   },
-  backgroundImage: {
-    label: "Background Image With Default",
-    type: ElementPropTypes.image,
+  backgroundColorCenter: {
+    label: "Background Color (Center)",
+    type: ElementPropTypes.color,
+  },
+  backgroundColorOutside: {
+    label: "Background Color (Outside)",
+    type: ElementPropTypes.color,
   },
   section2: {
     type: ElementPropTypes.sectionHeader,
   },
-  backgroundColor: {
-    label: "Background Color (Modal Box)",
+  borderColor: {
+    label: "Border Color",
     type: ElementPropTypes.color,
   },
-  backgroundOpacitySlider: {
-    label: "Background Opacity",
+  borderRadius: {
+    label: "Border Radius (px)",
     type: ElementPropTypes.slider,
   },
-  borderRadiusSlider: {
-    label: "Border Radius (Modal Box)",
-    type: ElementPropTypes.slider,
+  boxShadow: {
+    label: "Box Shadow (on/off)",
+    type: ElementPropTypes.bool,
   },
   section3: {
     type: ElementPropTypes.sectionHeader,
   },
+  headingFlexBoxPercentSlider: {
+    label: "Heading Flexbox Percentage on Large Screens",
+    type: ElementPropTypes.slider,
+  },
+  paddingLeftRightSlider: {
+    label: "Padding Left & Right (0-16rem)",
+    type: ElementPropTypes.slider,
+  },
+  paddingTopBottomSlider: {
+    label: "Padding Top & Bottom (0-16rem)",
+    type: ElementPropTypes.slider,
+  },
+  section4: {
+    type: ElementPropTypes.sectionHeader,
+  },
+  heading: {
+    label: "Heading Text",
+    type: ElementPropTypes.oneOf([
+      "LIMITED TIME ONLY",
+      "SALE ENDING SOON",
+      "LIMITED QUANTITIES",
+      "ACT FAST! NEW MARKDOWNS",
+      "PREVIEW THE SALE",
+      "(Turn off heading)",
+    ]),
+  },
   text: {
-    label: "Text Content",
+    label: "Subheading Text",
     type: ElementPropTypes.string,
+  },
+  color: {
+    label: "Font Color",
+    type: ElementPropTypes.color,
+  },
+  fontSize: {
+    label: "Font Size (px)",
+    type: ElementPropTypes.number,
   },
 }
 
+// Set up default configuration for dateRange picker (Sales Dates)
+const today = new Date() // start date
+const nextWeek = new Date() // end date
+nextWeek.setDate(nextWeek.getDate() + 7)
 export const defaultConfig = {
-  section1: "Background Image",
-  backgroundImage: {
-    uriBase: "http://d21ivvgspl06jm.cloudfront.net/",
-    imagePath: "element-block-assets/slideshow/slide2.jpg",
-    altText: "Monument Valley",
-    width: 1600,
-    height: 500,
-  },
-  section2: "Modal Box",
-  backgroundColor: "black",
-  backgroundOpacitySlider: {
+  section1: "Background Gradient",
+  backgroundColorCenter: "rgba(0,0,0,1)",
+  backgroundColorOutside: "rgba(100,100,100,1)",
+  section2: "Border Styles",
+  borderColor: "rgba(255,209,220)",
+  borderWidthSlider: {
     labelPrefix: "",
-    labelStepSize: 5,
-    labelSuffix: "%",
+    labelStepSize: 1,
+    labelSuffix: "px",
     min: 0,
-    max: 100,
-    stepSize: 10,
-    selectedValue: 40,
+    max: 10,
+    stepSize: 1,
+    selectedValue: 3,
     vertical: false,
   },
   borderRadiusSlider: {
@@ -60,12 +97,45 @@ export const defaultConfig = {
     min: 0,
     max: 50,
     stepSize: 5,
-    selectedValue: 10,
+    selectedValue: 30,
     vertical: false,
   },
-  section3: "Sale Banner Text",
-  lineOneText: `NOW OFFERING THE BEST DISCOUNTS OF THE YEAR`,
-  lineTwoText: "50% OFF SALE ITEMS",
-  buttonText: "Get The Best Deals",
-  textColor: "white",
+  boxShadow: true,
+  section3: "Box Spacing Options",
+  headingFlexBoxPercentSlider: {
+    labelPrefix: "w-",
+    labelStepSize: 10,
+    labelSuffix: "-l",
+    min: 0,
+    max: 100,
+    stepSize: 10,
+    selectedValue: 40,
+    vertical: false,
+  },
+  paddingLeftRightSlider: {
+    labelPrefix: "ph",
+    labelStepSize: 1,
+    labelSuffix: "",
+    min: 0,
+    max: 7,
+    stepSize: 1,
+    selectedValue: 5,
+    vertical: false,
+  },
+  paddingTopBottomSlider: {
+    labelPrefix: "pv",
+    labelStepSize: 1,
+    labelSuffix: "",
+    min: 0,
+    max: 7,
+    stepSize: 1,
+    selectedValue: 2,
+    vertical: false,
+  },
+
+  section4: "Sale Banner Text",
+  heading: "LIMITED TIME ONLY",
+  text: "50% Off Sale Items",
+  fontColor: "rgba(255,255,255,1)",
+  fontSize: 2.5,
 }
