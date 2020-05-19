@@ -33,8 +33,12 @@ export const configSchema = {
   section4: {
     type: ElementPropTypes.sectionHeader,
   },
+  readOnlyInstructions: {
+    label: "",
+    type: ElementPropTypes.readOnly,
+  },
   link: {
-    label: "Optional Link (leave blank for no link)",
+    label: "Link URL",
     type: ElementPropTypes.string,
   },
 }
@@ -63,5 +67,6 @@ export const defaultConfig = {
   },
   textAlign: "center",
   section4: "Optional Link",
+  readOnlyInstructions: "Leave URL blank for no link",
   link: "/sale",
 }
