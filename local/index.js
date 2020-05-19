@@ -6,7 +6,7 @@ const localEnvPropOverrides = {
   fontColor: "orange",
   fontSizeSlider: { selectedValue: 3.25 },
   textAlign: "left",
-  link: "",
+  link: "/sale",
 }
 
 const dataUtils = {

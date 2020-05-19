@@ -34,6 +34,7 @@ export const configSchema = {
     type: ElementPropTypes.sectionHeader,
   },
   readOnlyInstructions: {
+    label: "",
     type: ElementPropTypes.readOnly,
   },
   link: {
@@ -51,7 +52,7 @@ export const defaultConfig = {
   backgroundColor: "rgba(0,0,0,1)",
   showBackground: true,
   section2: "Sale Banner Text",
-  text: "50% Off Sale Items",
+  text: "<h1>50% Off Sale Items</h1>",
   section3: "Font Options",
   fontColor: "rgba(255,255,255,1)",
   fontSizeSlider: {
@@ -59,13 +60,13 @@ export const defaultConfig = {
     labelStepSize: 0.5,
     labelSuffix: "",
     min: 0.25,
-    max: 7,
+    max: 4,
     stepSize: 0.25,
-    selectedValue: 4.5,
+    selectedValue: 3,
     vertical: true,
   },
   textAlign: "center",
   section4: "Optional Link",
   readOnlyInstructions: "Leave URL blank for no link",
-  link: "/sale",
+  link: "",
 }

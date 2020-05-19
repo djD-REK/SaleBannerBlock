@@ -6,6 +6,8 @@ import {
 } from "@volusion/element-block-utils/test-utils"
 import { block as Block, defaultConfig } from "../src"
 
+const stripHTMLFromString = (string) => string.replace(/(<([^>]+)>)/gi, "")
+
 let props
 describe("The Block when loaded over AMP", () => {
   beforeEach(() => {
@@ -22,14 +24,14 @@ describe("The Block when loaded over AMP", () => {
   describe("when there is no custom data", () => {
     it("should render the block with the default content", () => {
       const wrapper = mount(<Block {...props} />)
-      expect(wrapper.text()).toBe(defaultConfig.text)
+      expect(wrapper.text()).toBe(stripHTMLFromString(defaultConfig.text))
     })
   })
   describe("when given custom data", () => {
     it("should render the block using the custom data", () => {
-      const customText = "Custom Block Text"
+      const customText = "<h1>Custom Block Text</h1><h2>Subheading</h2>"
       const wrapper = mount(<Block {...props} text={customText} />)
-      expect(wrapper.text()).toBe(customText)
+      expect(wrapper.text()).toBe(stripHTMLFromString(customText))
     })
   })
 })
