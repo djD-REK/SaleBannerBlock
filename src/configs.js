@@ -22,7 +22,7 @@ export const configSchema = {
     label: "Font Color",
     type: ElementPropTypes.color,
   },
-  fontSize: {
+  fontSizeSlider: {
     label: "Font Size (rem)",
     type: ElementPropTypes.slider,
   },
@@ -34,7 +34,6 @@ export const configSchema = {
     type: ElementPropTypes.sectionHeader,
   },
   readOnlyInstructions: {
-    label: "",
     type: ElementPropTypes.readOnly,
   },
   link: {
@@ -59,11 +58,11 @@ export const defaultConfig = {
     labelPrefix: "rem",
     labelStepSize: 0.5,
     labelSuffix: "",
-    min: 0,
+    min: 0.25,
     max: 7,
-    stepSize: 0.5,
+    stepSize: 0.25,
     selectedValue: 4.5,
-    vertical: false,
+    vertical: true,
   },
   textAlign: "center",
   section4: "Optional Link",
