@@ -1,7 +1,12 @@
 const tenantId = "$YOUR_TENANT_ID"
 
 const localEnvPropOverrides = {
-  //text: "Custom prop value for local testing",
+  backgroundColor: "slategray",
+  text: "Custom prop value for local testing",
+  fontColor: "orange",
+  fontSizeSlider: { selectedValue: 3.25 },
+  textAlign: "left",
+  link: "",
 }
 
 const dataUtils = {
