@@ -2,7 +2,7 @@ export const getStyles = (blockConfig) => {
   const { backgroundColor, fontColor, fontSizeSlider, textAlign } = blockConfig
   const fontSize = fontSizeSlider.selectedValue
 
-  const returnObject = {
+  return {
     banner: {
       backgroundColor: backgroundColor,
       color: fontColor,
@@ -10,6 +10,4 @@ export const getStyles = (blockConfig) => {
       textAlign: textAlign,
     },
   }
-
-  return returnObject
 }

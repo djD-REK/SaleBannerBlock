@@ -2,9 +2,9 @@ const tenantId = "$YOUR_TENANT_ID"
 
 const localEnvPropOverrides = {
   backgroundColor: "slategray",
-  text: "<h1>Custom prop value for local testing</h1>",
+  text: "<h1>Custom prop value for local testing</h1><h2>Second heading</h2>",
   fontColor: "orange",
-  fontSizeSlider: { selectedValue: 3.25 },
+  fontSizeSlider: { selectedValue: 1.25 },
   textAlign: "left",
   link: "/sale",
 }
